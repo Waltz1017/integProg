@@ -5,12 +5,10 @@ header("Content-Type: application/json");
 $method=$_SERVER['REQUEST_METHOD'];
 
 $uri=parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
 $uri=str_replace("/midterm", "", $uri);
-
 $urlParts=explode("/",trim($uri, "/"));
 // print_r($urlParts);
-echo $urlParts[0];
+//echo $urlParts[0];
 
 if($urlParts[0]=="users"){
     if($method == "GET" && count($urlParts) == 1){
@@ -48,4 +46,5 @@ else {
         "message"=>"INVALID URL"
     ]);
 }
+
 ?>
